@@ -1,0 +1,360 @@
+$pColour: rgb(88, 45, 45);
+$qColour: cornflowerblue;
+$strongFontWeight: 600;
+$headerFontWeight: normal;
+$borderColour: #acacac;
+$borderFocusColour: black;
+$buttonGradient: linear-gradient($pColour,$qColour);
+$buttonGradientHover: linear-gradient($qColour,$pColour);
+$circle: 1rem;
+@mixin frequencyCirclesDims ($scale:1) {
+    width: ($circle * 10) * $scale;
+    height: ($circle * 10) * $scale;
+}
+
+@mixin fitContent {
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+@mixin marginCentre {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ********************************************************* */
+
+
+* {
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+html {
+    overflow-y: scroll;
+    margin-bottom:0;
+    font-size:100%;
+}
+
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+h1,
+h2,
+h3 {
+    font-weight: $headerFontWeight;
+}
+
+h2 {
+    border-top: 1px dotted $borderColour;
+    padding-top: 1rem;
+}
+
+a { 
+    text-decoration:none;
+    color: $pColour;
+    border-bottom:1px dotted $pColour;
+    &:hover { 
+        color: $qColour;
+        border-bottom:1px dotted $qColour;
+    }
+}
+table { 
+    border-spacing: 0;
+    border-style:solid;
+    border-width: 1px 0 0 1px;
+    border-color: $borderColour;
+    background:rgb(226, 226, 226);
+    margin: 1rem 0;
+}
+th, td { 
+    border-style:solid;
+    border-width: 0 1px 1px 0;
+    border-color: $borderColour;
+}
+th, td { padding: 0.5rem;}
+td { background: white;}
+th {font-weight: $strongFontWeight}
+
+dt {font-weight: $strongFontWeight}
+sup { 
+    font-weight:normal;
+    color:black;
+}
+
+button {
+    cursor: pointer;
+    border:0;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    font-family: sans-serif;
+    font-size: 1rem;
+
+    &:focus {
+        outline: none;
+         box-shadow: 0 0 2px 3px  $borderColour;
+    }
+}
+
+
+
+.no-bullets {
+    padding-left:0;
+    list-style:none;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+.strong {
+    font-weight: $strongFontWeight;
+}
+
+.p {
+    color:$pColour;
+    font-weight: $strongFontWeight;
+}
+.q {
+    color: $qColour;
+    font-weight: $strongFontWeight;
+}
+
+p, li, dd {
+    max-width: 37.5rem; /* 400px */
+}
+
+
+.container {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.page {
+    &-header {
+        padding-bottom: 1rem;
+    }
+    &-title {
+        text-align: center;
+        margin-bottom: 2rem;    
+    }
+    &-intro { @include marginCentre; }
+}
+
+.glossary-button {
+    width: 10rem; 
+
+    border: 1px dotted $borderColour;
+
+    &:hover {
+        border: 1px solid $borderColour;
+    }
+
+}
+.equation {
+    text-align:center;
+    font-size: 2rem;
+}
+
+
+/* form */
+.hw {
+    &-form {
+        padding:2rem 0;
+        @include fitContent;
+        margin: 0 auto -1px auto;
+    }
+
+    &-input {
+        width: 3em;
+        border: 2px solid $borderColour;
+        border-radius: 0.2rem;
+        &:focus {
+            outline: none;
+            border: 2px solid $borderFocusColour;
+        }
+    }
+
+    &-button {
+        background-image: $buttonGradient;
+        margin-left: 0.5rem;
+        color: white;
+
+        &:hover {
+            background-image: $buttonGradientHover;
+        }
+    }
+
+}
+
+
+
+.error {
+    border: 2px solid red;
+    background: lightpink;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: center;
+}
+.approx { 
+    color: red;
+    font-weight:600;
+}
+.rounding-error { 
+    border-style: solid;
+    border-width: 2px 0;
+    border-color: red;
+    padding: 0.25rem 0;
+}
+
+
+/* output */
+.output-container {
+
+    padding: 2rem 1rem;
+}
+
+.qq-value {
+    text-align: center;
+}
+
+/* boxes */
+.boxes { 
+    h3 {
+        text-align: center;
+    }
+    ul {
+        @include marginCentre;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+.box {
+
+    border-bottom:1px solid $borderColour;
+    padding-bottom: 2rem;
+    &-list { 
+        width: 8.75rem; 
+        text-align: center;
+    }
+
+}
+
+
+.frequency-total {
+    text-align: center;
+    max-width: 100%;
+}
+
+.phenotype-frequencies {
+
+    @include fitContent;
+    @include marginCentre;
+
+    p, h3 { text-align: center; }
+}
+
+/* circles */
+.frequency-circles {
+    @include frequencyCirclesDims(1);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow: visible;
+}
+
+.circle {
+    display: block;
+    width: $circle;
+    height: $circle;
+    border-radius: 50%;
+    margin: 0;
+
+    &-p { background: $pColour; }
+
+    &-pq {
+        &-bg {
+            background: $pColour;
+            overflow: hidden;
+            position: relative;
+        }
+        &-overlay {
+            display: block;
+            width: $circle;
+            height: $circle;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background: $qColour;
+            margin: 0;
+        }
+    }
+
+    &-q { background: $qColour; }
+}
+
+
+@media screen and (min-width: 960px) {
+
+    // body { font-size: 1.75rem;}
+    body { font-size: 1.3rem;}
+    p, li, dd {
+        max-width: 100%;
+    }
+
+    table { margin: 2rem 0; }
+    .page-title { line-height: normal;}
+
+    .container {
+        border-style:dotted;
+        border-width: 0 1px;
+        border-color: $borderColour;
+        max-width: 73rem;
+        padding:5.5rem;
+    }
+
+    .equation { font-size: 3rem; }
+
+    .hw-form {
+        text-align: center;
+    }
+    .boxes {
+        display: flex;
+        width: 90%;
+        padding: 1rem 0;
+        margin: auto;
+    }
+    .box {
+        width: 50%;
+        margin-bottom: 2rem;
+        padding-bottom: 4rem;
+        &-list { width: 15rem; }
+    }
+
+    /* this to compensate for only two values in allele list */
+    .allele-list {
+        margin-bottom: 3.9125rem;
+    }
+
+    .frequency-circles {
+        @include frequencyCirclesDims(1.3); 
+    }  
+    .circle,
+    .circle-pq-overlay {
+        width: $circle * 1.3;
+        height: $circle *1.3 ;
+
+    }
+}
