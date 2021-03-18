@@ -138,12 +138,11 @@ hwForm.addEventListener("submit", e => {
  * THE CALCULATOR
  */
 function hwCalculator(qq) {
-  const q = Math.round(Math.sqrt(qq) * 100) / 100
-  const P = Math.round((1 - q) * 100) / 100
+  const q = roundTwoPlaces(Math.sqrt(qq))
+  const P = roundTwoPlaces(1 - q)
   const PplusQ = Math.round(P * 1 + q * 1)
-  const PP = Math.round(P * P * 100) / 100
-  const TwoPq = Math.round(2 * (P * q) * 100) / 100
-
+  const PP = roundTwoPlaces(P * P)
+  const TwoPq = roundTwoPlaces(2 * (P * q))
   const equationTotal = Math.round(PP + TwoPq + qq)
 
   /* 
@@ -267,4 +266,9 @@ function circleFrequencies(freqNum, freqContainer, circleType) {
   for (let i = 0; i < freqNum; i++) {
     freqContainer.appendChild(circleType.cloneNode(true))
   }
+}
+
+/* generic rounding function - two decimal places */
+function roundTwoPlaces(value) {
+  return Math.round(value * 100) / 100
 }
