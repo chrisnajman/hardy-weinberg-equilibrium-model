@@ -138,11 +138,11 @@ hwForm.addEventListener("submit", e => {
  * THE CALCULATOR
  */
 function hwCalculator(qq) {
-  const q = roundTwoPlaces(Math.sqrt(qq))
-  const P = roundTwoPlaces(1 - q)
+  const q = roundNumber(Math.sqrt(qq), 2)
+  const P = roundNumber(1 - q, 2)
   const PplusQ = Math.round(P * 1 + q * 1)
-  const PP = roundTwoPlaces(P * P)
-  const TwoPq = roundTwoPlaces(2 * (P * q))
+  const PP = roundNumber(P * P, 2)
+  const TwoPq = roundNumber(2 * (P * q), 2)
   const equationTotal = Math.round(PP + TwoPq + qq)
 
   /* 
@@ -268,7 +268,20 @@ function circleFrequencies(freqNum, freqContainer, circleType) {
   }
 }
 
-/* generic rounding function - two decimal places */
-function roundTwoPlaces(value) {
-  return Math.round(value * 100) / 100
+/* 
+  Improved generic rounding function: specify number of places: 
+  to 1 decimal place: value * 10 / 10
+  to 2 decimal place: value * 100 / 100
+  to 3 decimal place: value * 1000 / 1000
+  to 4 decimal place: value * 10000 / 10000
+  etc
+
+  decPointShifter allows us to input the actual number of decimal places we want to see:
+  10 to the 1 = 1 dec place
+  10 to the 2 = 2 dec places
+  etc
+*/
+function roundNumber(value, decPlaces) {
+  let decPointShifter = Math.pow(10, decPlaces)
+  return Math.round(value * decPointShifter) / decPointShifter
 }
