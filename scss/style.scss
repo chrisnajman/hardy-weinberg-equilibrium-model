@@ -142,6 +142,7 @@ button {
     display: block;
 }
 .inline-block { display: inline-block; }
+
 .strong {
     font-weight: $strongFontWeight;
 }
@@ -179,6 +180,11 @@ p, li, dd {
     text-align:center;
     font-size: 2rem;
     font-family: "Arial Thin", sans-serif;
+}
+
+.step {
+    display:block;
+    padding: 0.5rem 0 0 1rem;
 }
 
 
