@@ -22,80 +22,24 @@
       <header class="page-header">
         <h1 class="page-title">The Hardy-Weinberg Equilibrium Model</h1>
         <p class="page-intro">
-          In population genetics, the Hardy-Weinberg Equilibrium Model states
-          that allele and genotype frequencies in a population will remain
-          constant from generation to generation in the absence of other
-          evolutionary influences.
+          The Hardy-Weinberg equilibrium model (or law, or principle) states
+          that the frequencies of alleles and genotypes in a population will
+          remain constant over time
+          <em>in the absence of other evolutionary forces</em>. These forces
+          are:
         </p>
+        <ol class="page-intro-list">
+          <li>Genetic drift</li>
+          <li>Mutation</li>
+          <li>Migration</li>
+          <li>Selection (natural or otherwise)</li>
+        </ol>
       </header>
 
       <main class="main-content">
-        <!-- GLOSSARY -->
-        <section class="glossary">
-          <header>
-            <h2>Glossary</h2>
-            <dl>
-              <dt>Evolution</dt>
-              <dd>
-                The change in <span class="strong">allele frequencies</span> in
-                a population over time.
-              </dd>
-            </dl>
-            <button class="glossary-button" data-glossary-toggle-btn>
-              Expand glossary
-            </button>
-          </header>
-          <div class="glossary-more hide" data-glossary-more>
-            <dl>
-              <dt>Allele</dt>
-              <dd>Version of a gene, e.g. the gene for eye colour.</dd>
-              <dt>Genotype</dt>
-              <dd>The combination of two related alleles in a cell.</dd>
-              <dt>Phenotype</dt>
-              <dd>
-                The expression of the gene in the organism, e.g. brown eyes.
-              </dd>
-              <dt>Allele frequency</dt>
-              <dd>
-                The proportion of alleles in a gene pool that are either
-                dominant, e.g. code for <span class="p">brown</span> eyes, or
-                recessive, e.g. code for <span class="q">blue</span> eyes.
-              </dd>
-              <dt>Genotype frequency</dt>
-              <dd>The proportion of allele combinations in a cell.</dd>
-              <dt>Homozygous dominant chromosome</dt>
-              <dd>
-                Both the allele inherited from the mother and the one inherited
-                from the father are dominant.
-              </dd>
-              <dt>Homozygous recessive chromosome</dt>
-              <dd>
-                Both the allele inherited from the mother and the one inherited
-                from the father are recessive.
-              </dd>
-              <dt>Heterozygous chromosome</dt>
-              <dd>One allele is dominant and one is recessive.</dd>
-            </dl>
-          </div>
-        </section>
-        <!-- FORCES-->
-        <section>
-          <h2>Forces that lead to changes in allele frequencies</h2>
-          <ol>
-            <li>Genetic drift</li>
-            <li>Mutation</li>
-            <li>Migration</li>
-            <li>Selection (natural or otherwise)</li>
-          </ol>
-        </section>
         <!-- NULL MODEL -->
-        <section>
-          <h2>The Hardy-Weinberg model is a null model</h2>
-          <p>
-            A null model establishes a baseline against which changes in a
-            system can be measured after the application of a force.
-          </p>
-          <h3>Assumptions</h3>
+        <section class="section">
+          <h2>Assumptions of the Model</h2>
           <ul>
             <li>
               <span class="strong">None</span> of the the four forces listed
@@ -113,29 +57,41 @@
             </li>
             <li>Body cells are diploid.</li>
           </ul>
+
+          <p>
+            Clearly, this is not a realistic scenario, so of what use is
+            the Hardy-Weinberg equilibrium model?
+          </p>
+          <p>
+            The answer is that it establishes a null model, against which
+            changes in a system can be measured after the application of one or
+            all of the four forces listed above.
+          </p>
         </section>
         <!-- POSSIBLE GENOTYPES -->
-        <section>
-          <h3>Possible genotypes in a diploid cell</h3>
-          <p>By convention:</p>
+        <section class="section">
+          <h2>Possible Genotypes in a Diploid Cell</h2>
+          <p>
+            To keep things trackable, we focus on one gene, e.g. the one for eye
+            colour <span class="asterisk">*</span>, where the alleles are:
+          </p>
           <ul>
             <li>
-              <span class="p">P</span> represents the
-              <span class="strong">dominant allele</span>, and
+              <span class="dominant">B</span> &equals; brown eyes (dominant)
             </li>
             <li>
-              <span class="q">q</span> represents the
-              <span class="strong">recessive allele</span>.
+              <span class="recessive">b</span> &equals; blue eyes (recessive)
             </li>
           </ul>
           <p>
-            To keep things trackable, we focus on one gene, e.g. eye colour,
-            where the possible alleles are:
+            By convention a capital letter represents the dominant allele, and a lower-case
+            letter the recessive allele.
           </p>
-          <ul>
-            <li><span class="p">P</span> &equals; brown eyes (dominant)</li>
-            <li><span class="q">q</span> &equals; blue eyes (recessive)</li>
-          </ul>
+          <p>
+            <span class="asterisk">*</span> This is simplified for the sake of
+            the example. In reality, eye-colour is determined by multiple
+            alleles.
+          </p>
           <table>
             <thead>
               <tr>
@@ -143,184 +99,304 @@
                 <th colspan="2" scope="col">Father</th>
               </tr>
               <tr>
-                <th scope="col"><span class="p">P</span></th>
-                <th scope="col"><span class="q">q</span></th>
+                <th scope="col"><span class="dominant">B</span></th>
+                <th scope="col"><span class="recessive">b</span></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th rowspan="2" scope="row">Mother</th>
-                <th scope="row"><span class="p">P</span></th>
-                <td><span class="p">PP</span></td>
-                <td><span class="p">P</span><span class="q">q</span></td>
+                <th scope="row"><span class="dominant">B</span></th>
+                <td><span class="dominant">BB</span></td>
+                <td>
+                  <span class="recessive">b</span
+                  ><span class="dominant">B</span>
+                </td>
               </tr>
               <tr>
-                <th scope="row"><span class="q">q</span></th>
-                <td><span class="p">P</span><span class="q">q</span></td>
-                <td><span class="q">qq</span></td>
+                <th scope="row"><span class="recessive">b</span></th>
+                <td>
+                  <span class="dominant">B</span
+                  ><span class="recessive">b</span>
+                </td>
+                <td><span class="recessive">bb</span></td>
               </tr>
             </tbody>
           </table>
+          <p>
+            The possible genotypes for the <span class="dominant">B</span> and
+            <span class="recessive">b</span> alleles are:
+          </p>
           <ul class="no-bullets">
             <li>
-              <span class="p">PP</span> &equals; homozygous dominant, brown
-              eyes.
+              <span class="dominant">BB</span>: homozygous dominant, brown eyes.
             </li>
             <li>
-              <span class="p">P</span><span class="q">q</span> &equals;
-              heterozygous, brown eyes (the dominant allele will always trump
-              the recessive allele).
+              <span class="dominant">B</span
+              ><span class="recessive">b</span>/<span class="recessive">b</span
+              ><span class="dominant">B</span>: heterozygous, brown eyes (the
+              dominant allele will always trump the recessive allele).
             </li>
             <li>
-              <span class="q">qq</span> &equals; homozygous recessive, blue
+              <span class="recessive">bb</span>: homozygous recessive, blue
               eyes.
             </li>
           </ul>
         </section>
 
         <!-- CALCULATING FREQUENCIES -->
-        <section>
+        <section class="section">
           <!-- CALCULATING GENOTYPE FREQUENCIES -->
-          <h2>Calculating genotype frequencies</h2>
-          <p>
-            We can calculate genotype frequencies for a population only if we
-            know the percentage of that population in which the homozygous
-            recessive genotype (<span class="q">qq</span>) has been expressed.
-            (The <span class="p">PP</span> percentage could not be derived from
-            empirical observation, because the <span class="p strong">P</span
-            ><span class="q strong">q</span> genotype is also
-            <span class="p strong">P</span> dominant.)
+          <h2>
+            Calculating Genotype Frequencies
+          </h2>
+
+          <p  class="border-box">
+            We can calculate the genotype frequencies for a population
+            only if we know the percentage of that population in which the
+              homozygous recessive genotype (<span class="recessive">bb</span>)
+              has been expressed. 
           </p>
 
-          <!-- THE HARDY-WEINBERG EQUATION -->
-          <h3>The Hardy-Weinberg equation</h3>
+          <p>
+            That is, in any population we could, in theory, count all the people
+            who had the recessive genotype (<span class="recessive">bb</span>,
+            blue eyes).
+          </p>
+          <p>
+            The same could not be done for people with brown eyes: they might
+            have either the homozygous dominant genotype (<span class="dominant"
+              >BB</span
+            >) or the heterozygous genotype (<span class="dominant"
+              >B</span
+            ><span class="recessive">b</span>/<span class="recessive">b</span
+            ><span class="dominant">B</span>).
+          </p>
+          <h3>The Hardy-Weinberg Equation</h3>
           <p>
             The Hardy-Weinberg equation is used to measure genotype frequencies
-            in a population.
-          </p>
-          <div class="equation">
-            <p>
-              <span class="p">P<sup>2</sup></span> &plus; 2<span class="p"
-                >P</span
-              ><span class="q">q</span> &plus;
-              <span class="q">q<sup>2</sup></span> &equals; 1
-            </p>
-          </div>
-          <p>
-            If we have the value of <span class="q">qq</span> i.e.
-            <span class="q">q<sup>2</sup></span
-            >, we can solve the equation and get the genotype frequencies for
-            <span class="p">PP</span> and <span class="p">P</span
-            ><span class="q">q</span> as well:
-          </p>
-          <ul>
-            <li>
-              &Sqrt;<span class="q">q<sup>2</sup></span> &equals;
-              <span class="q">q</span>
-            </li>
-            <li>
-              1 &minus; <span class="q">q</span> &equals;
-              <span class="p">P</span>
-            </li>
-            <li>
-              <span class="p">P<sup>2</sup></span> &equals;
-              <span class="p">P</span> &times; <span class="p">P</span>
-            </li>
-            <li>
-              2<span class="p">P</span><span class="q">q</span> &equals; 2(<span
-                class="p"
-                >P</span
-              >
-              &times; <span class="q">q</span>)
-            </li>
-          </ul>
-          <p>
-            <strong
-              >The genotype frequencies will not always sum to 1 (100%) due to
-              rounding &mdash; this is expected behaviour.</strong
-            >
+            in a population that is in equilibrium, i.e. not evolving.
           </p>
 
-          <h3>Checking the result</h3>
+          <p>As can be seen from the following graphic,</p>
+
+          <img src="img/hw-equation.png" alt="" />
+          <ul>
+            <li>
+              <span class="dominant">P<sup>2</sup></span> is the frequency of
+              the homozygous dominant genotype (in our example,
+              <span class="dominant">BB</span>)
+            </li>
+            <li>
+              2<span class="dominant">P</span
+              ><span class="recessive">q</span> is the frequency of the
+              heterozygous genotype (<span class="dominant">B</span
+              ><span class="recessive">b</span>/<span class="recessive">b</span
+              ><span class="dominant">B</span>) and
+            </li>
+            <li>
+              <span class="recessive">q<sup>2</sup></span> is the frequency of
+              the homozygous recessive genotype (<span class="recessive">bb</span>).
+            </li>
+            <li>The total value is always 1.</li>
+          </ul>
+          <p>Furthermore:</p>
+          <img src="img/PplusQequalsOne.png" alt="P + q = 1" />
+          <ul>
+            <li>
+              <span class="dominant">P</span> is the frequency of the
+              dominant allele (<span class="dominant">B</span>)
+            </li>
+            <li>
+              <span class="recessive">q</span> is the frequency of the
+              recessive allele (<span class="recessive">b</span>)
+            </li>
+            <li>The total value is always 1.</li>
+          </ul>
+          <h3>Example Problem</h3>
           <p>
-            This can be done by calculating the allele frequencies and adding
-            them together.
+            Twenty individuals, out of a population of a hundred, have blue eyes. The rest have brown eyes. For the population as a whole, what is the frequency of:
+          </p>
+          <ol type="i">
+            <li>the dominant <span class="dominant">B</span> allele?</li>
+            <li>the recessive <span class="recessive">b</span> allele?</li>
+            <li>the homozygous recessive <span class="recessive">bb</span> genotype?</li>
+            <li>the homozygous dominant <span class="dominant">BB</span> genotype?</li>
+            <li>the  heterozygous <span class="dominant">B</span
+            ><span class="recessive">b</span>/<span class="recessive">b</span
+            ><span class="dominant">B</span> genotype?</li>
+          </ol>
+          <h4>Steps to the Solution</h4>
+          <p>We have already been supplied with the information that twenty percent of the population expresses the
+            homozygous recessive genotype (<span class="recessive">bb</span>).</p>
+          <p>
+            1) In order to plug this value into the equation, where it will
+            replace
+            <span class="recessive">q<sup>2</sup></span
+            >, we must convert it from a percentage to a frequency:
           </p>
           <ul>
             <li>
-              <span class="p">P<sup>2</sup></span> &plus; (2<span class="p"
-                >P</span
-              ><span class="q">q</span> &divide; 2) &equals;
-              <span class="p">P</span> frequency.
+              <span class="recessive">bb</span> &divide; 100 &equals;
+              <span class="recessive">q<sup>2</sup></span>
             </li>
+            <li>20 &divide; 100 &equals; 0.2,</li>
             <li>
-              (2<span class="p">P</span><span class="q">q</span> &divide; 2)
-              &plus; <span class="q">q<sup>2</sup></span> &equals;
-              <span class="q">q</span> frequency.
+              <span class="recessive">q<sup>2</sup></span> &equals; 0.2
+            </li>
+          </ul>
+          <p>The equation can now be rewritten as:</p>
+          <ul>
+            <li>
+              <span class="dominant">P<sup>2</sup></span> &plus; 2<span
+                class="dominant"
+                >P</span
+              ><span class="recessive">q</span> &plus; 0.2 &equals; 1
             </li>
           </ul>
           <p>
-            <span class="p">P</span> frequency &plus;
-            <span class="q">q</span> frequency must sum to 1 (100%).
+            2) To solve the equation we need to get the value of
+            <span class="recessive">q</span>, i.e. &Sqrt;<span class="recessive"
+              >q<sup>2</sup></span
+            >:
+          </p>
+          <ul>
+            <li>
+              <span class="recessive">q<sup>2</sup></span> &equals; 0.2,
+            </li>
+            <li>&Sqrt; 0.2 &equals; 0.45</li>
+            <li><span class="recessive">q</span> &equals; 0.45</li>
+          </ul>
+          <p>
+            3) Now that we have the value of <span class="recessive">q</span>,
+            we can derive the value of <span class="dominant">P</span>:
+          </p>
+          <ul>
+            <li>
+              <span class="dominant">P</span> &plus;
+              <span class="recessive">q</span> &equals; 1,
+            </li>
+            <li>
+              1 &minus; <span class="recessive">q</span> &equals;
+              <span class="dominant">P</span>,
+            </li>
+            <li>
+              1 &minus; 0.45 &equals;
+              <span class="dominant">P</span>,
+            </li>
+            <li><span class="dominant">P</span> &equals; 0.55.</li>
+          </ul>
+          <p>
+            4) Now that we have the value of <span class="dominant">P</span> we
+            can calculate the value of
+            <span class="dominant">P<sup>2</sup></span
+            >:
+          </p>
+          <ul>
+            <li>
+              <span class="dominant">P<sup>2</sup></span> &equals; 0.55 &times;
+              0.55 &equals; 0.3.
+            </li>
+          </ul>
+          <p>The equation can now be rewritten as:</p>
+          <ul>
+            <li>
+              0.3 &plus; 2<span class="dominant">P</span
+              ><span class="recessive">q</span> &plus; 0.2 &equals; 1
+            </li>
+          </ul>
+          <p>
+            5) Now we calculate the value of 2<span class="dominant"
+              >P</span
+            ><span class="recessive">q</span>:
           </p>
 
-          <!-- PHENOTYPE FREQUENCIES -->
-          <h3>Phenotype frequencies</h3>
-          <p>
-            The values of the phenotype frequencies, i.e. the expression of the
-            genotypes (in this case blue or brown eyes) in a population, are as
-            follows:
-          </p>
           <ul>
             <li>
-              Blue eyes = <span class="q">qq</span> (This is a given: it is the
-              number we had to work with from the beginning).
+              0.3 &plus; 2<span class="dominant">P</span
+              ><span class="recessive">q</span> &plus; 0.2 &equals; 1,
             </li>
+
             <li>
-              Brown eyes = <span class="p">PP</span> + 2<span class="p">P</span
-              ><span class="q">q</span>
+              1 &minus; 0.5 &equals; 2<span class="dominant">P</span
+              ><span class="recessive">q</span>,</li>
+            </li>
+
+            <li>
+              2<span class="dominant">P</span
+              ><span class="recessive">q</span> &equals; 0.5.
             </li>
           </ul>
+          <p>The product of the equation is:</p>
+          <ul>
+            <li>
+              0.3 &plus; 0.5 &plus; 0.2 &equals; 1
+            </li>
+          </ul>
+          <h4>Answers</h4>
+          <p>We know that:</p>
+          <ul>
+            <li><span class="dominant">P<sup>2</sup></span> &equals; <span class="dominant">BB</span>,
+            <li>2<span class="dominant">P</span><span class="recessive">q</span> &equals; <span class="dominant">B</span
+            ><span class="recessive">b</span>/<span class="recessive">b</span
+            ><span class="dominant">B</span>,</li>
+            <li><span class="recessive">q<sup>2</sup></span> &equals; <span class="recessive">qq</span>.</li>
+          </ul>
+          <p>We also know that:</p>
+          <ul>
+            <li><span class="dominant">P</span> &equals; <span class="dominant">B</span>, and</li>
+            <li><span class="recessive">q</span> &equals; <span class="recessive">b</span>.</li>
+          </ul>
+          <p>Therefore, the frequency of the:</p>
+          <ol type="i">
+            <li>dominant <span class="dominant">B</span> allele is 0.55,</li>
+            <li>recessive <span class="recessive">b</span> allele is 0.45,</li>
+            <li>homozygous recessive <span class="recessive">bb</span> genotype is 0.2,</li>
+            <li>homozygous dominant <span class="dominant">BB</span> genotype is 0.3, and</li>
+            <li>heterozygous <span class="dominant">B</span
+            ><span class="recessive">b</span>/<span class="recessive">b</span
+            ><span class="dominant">B</span> genotype is 0.5.</li>
+          </ol>
+
         </section>
         <!-- CALCULATOR -->
-        <section>
+        <section class="section">
           <!-- CALCULATOR FORM -->
           <h2>Calculator</h2>
-          <p>
-            The calculator solves the Hardy-Weinberg equation after the input of
-            <span class="q">qq</span> i.e. <span class="q">q<sup>2</sup></span
-            >. It only accepts integers.
-          </p>
-          <p>
-            <strong>Note</strong>: both genotype and phenotype totals do not
-            always equal 1 or 100% respectively, due to rounding. This is
-            expected.
-          </p>
-          <form data-hw-calculator class="hw-form">
+
+            <p class="border-box centre-element">To use the calculator you must already have a number representing the percentage of the population expressing the homozygous recessive (<span class="recessive">bb</span>) genotype.</p>
+
+            <form data-hw-calculator class="hw-form">
             <p class="form-info">
               Enter a number between 1 and 100 (&percnt;).
             </p>
             <label for="numberInput" class="hw-label">
-              <span class="q">q<sup>2</sup></span> &equals;
+              <span class="recessive">bb</span> &equals;
               <input
                 type="number"
                 id="numberInput"
                 data-hw-input
                 class="hw-input"
+
               />
             </label>
-            <button class="hw-button">Calculate frequencies</button>
+            <button class="hw-button" data-hw-button>Calculate frequencies</button>
             <div data-error class="error hide"></div>
           </form>
 
           <!-- CALCULATOR OUTPUT-->
           <div data-template-output></div>
+                    <p class="centre-element">
+            <strong>Note</strong>: both genotype and phenotype totals do not
+            always equal 1 or 100% respectively, due to rounding. This is
+            expected.
+          </p>
 
           <!-- CALCULATOR OUTPUT TEMPLATE -->
           <template data-template>
             <div data-output-container class="output-container hide">
               <h2 class="qq-value">
-                <span class="q">q<sup>2</sup></span> &equals;
+                <span class="recessive">bb</span> &equals;
                 <span data-initial-qq-input></span> &percnt;
               </h2>
               <div class="boxes">
@@ -328,16 +404,17 @@
                   <h3>Genotype</h3>
                   <ul class="box-list genotype-list">
                     <li>
-                      <span class="p">PP</span> frequency:
+                      <span class="dominant">BB</span> frequency:
                       <span data-pp-frequency></span>
                     </li>
                     <li>
-                      <span class="p">P</span
-                      ><span class="q">q</span> frequency:
+                      <span class="dominant">B</span
+                      ><span class="recessive">b</span>/<span class="recessive">b</span><span class="dominant">B</span
+                      > frequency:
                       <span data-pq-frequency></span>
                     </li>
                     <li>
-                      <span class="q">qq</span> frequency:
+                      <span class="recessive">bb</span> frequency:
                       <span data-qq-frequency></span>
                     </li>
                   </ul>
@@ -354,11 +431,11 @@
                   <h3>Allele</h3>
                   <ul class="box-list allele-list">
                     <li>
-                      <span class="p">P</span> frequency:
+                      <span class="dominant">B</span> frequency:
                       <span data-p-frequency></span>
                     </li>
                     <li>
-                      <span class="q">q</span> frequency:
+                      <span class="recessive">b</span> frequency:
                       <span data-q-frequency></span>
                     </li>
                   </ul>
@@ -376,11 +453,11 @@
                 <ul class="no-bullets">
                   <li>
                     <span data-result-brown-eyes></span>&percnt; of the
-                    population have <span class="p">brown</span> eyes.
+                    population have <span class="dominant">brown</span> eyes.
                   </li>
                   <li>
                     <span data-result-blue-eyes></span>&percnt; of the
-                    population have <span class="q">blue</span> eyes
+                    population have <span class="recessive">blue</span> eyes
                   </li>
                 </ul>
                 <p>Total: <span data-phenotypes-total></span>&percnt;</p>
@@ -388,9 +465,57 @@
             </div>
           </template>
         </section>
+        <!-- GLOSSARY -->
+        <section class="section">
+
+            <h2>Glossary</h2>
+            <dl>
+              <dt>Evolution</dt>
+              <dd>
+                The change in <span class="strong">allele frequencies</span> in
+                a population over time.
+              </dd>
+            </dl>
+
+          
+
+            <dl>
+              <dt>Allele</dt>
+              <dd>Version of a gene, e.g. the gene for eye colour.</dd>
+              <dt>Genotype</dt>
+              <dd>The combination of two related alleles in a cell.</dd>
+              <dt>Phenotype</dt>
+              <dd>
+                The expression of the gene in the organism, e.g. brown eyes.
+              </dd>
+              <dt>Allele frequency</dt>
+              <dd>
+                The proportion of alleles in a gene pool that are either
+                dominant, e.g. code for
+                <span class="dominant">brown</span> eyes, or recessive, e.g.
+                code for <span class="recessive">blue</span> eyes.
+              </dd>
+              <dt>Genotype frequency</dt>
+              <dd>The proportion of allele combinations in a cell.</dd>
+              <dt>Homozygous dominant chromosome</dt>
+              <dd>
+                Both the allele inherited from the mother and the one inherited
+                from the father are dominant.
+              </dd>
+              <dt>Homozygous recessive chromosome</dt>
+              <dd>
+                Both the allele inherited from the mother and the one inherited
+                from the father are recessive.
+              </dd>
+              <dt>Heterozygous chromosome</dt>
+              <dd>One allele is dominant and one is recessive.</dd>
+            </dl>
+
+
+        </section>
 
         <!-- FURTHER INFORMATION -->
-        <section>
+        <section class="section">
           <h2>Further information</h2>
           <p>
             I found the following

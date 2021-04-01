@@ -6,6 +6,8 @@
 const hwForm = document.querySelector("[data-hw-calculator]")
 const hwInput = document.querySelector("[data-hw-input]")
 
+const hwButton = document.querySelector("[data-hw-button]")
+
 // DISPLAY
 // Error message
 const error = document.querySelector("[data-error]")
@@ -83,7 +85,7 @@ const blueEyesResults = templateClone.querySelector("[data-result-blue-eyes]")
 document.querySelector("[data-template-output]").appendChild(templateClone)
 
 /*GLOSSARY */
-const glossaryBtn = document.querySelector("[data-glossary-toggle-btn]")
+// const glossaryBtn = document.querySelector("[data-glossary-toggle-btn]")
 
 /**
  * THE FORM
@@ -132,6 +134,9 @@ hwForm.addEventListener("submit", e => {
     // clear template values when focussed
     clearTemplateValuesOnFocus()
   })
+
+  hwButton.disabled = true
+  hwButton.classList.add("hw-disabled")
 })
 
 /**
@@ -225,24 +230,24 @@ function hwCalculator(qq) {
  * GLOSSARY
  */
 
-glossaryBtn.addEventListener("click", e => {
-  toggleGlossary(e)
-  toggleGlossaryText(e)
-})
+// glossaryBtn.addEventListener("click", e => {
+//   toggleGlossary(e)
+//   toggleGlossaryText(e)
+// })
 
-function toggleGlossary(e) {
-  const getGlossary = e.target.closest(".glossary")
-  const getGlossaryBody = getGlossary.querySelector("[data-glossary-more]")
-  getGlossaryBody.classList.toggle("show")
-}
+// function toggleGlossary(e) {
+//   const getGlossary = e.target.closest(".glossary")
+//   const getGlossaryBody = getGlossary.querySelector("[data-glossary-more]")
+//   getGlossaryBody.classList.toggle("show")
+// }
 
-function toggleGlossaryText(e) {
-  if (e.target.innerText === "Expand glossary") {
-    e.target.innerText = "Close glossary"
-  } else if (e.target.innerText === "Close glossary") {
-    e.target.innerText = "Expand glossary"
-  }
-}
+// function toggleGlossaryText(e) {
+//   if (e.target.innerText === "Expand glossary") {
+//     e.target.innerText = "Close glossary"
+//   } else if (e.target.innerText === "Close glossary") {
+//     e.target.innerText = "Expand glossary"
+//   }
+// }
 
 /**
  * HELPER FUNCTIONS
@@ -260,6 +265,8 @@ function clearTemplateValuesOnFocus() {
   frequencyAlleleCircles.innerHTML = ""
   brownEyesResults.innerHTML = ""
   blueEyesResults.innerHTML = ""
+  hwButton.disabled = false
+  hwButton.classList.remove("hw-disabled")
 }
 
 function circleFrequencies(freqNum, freqContainer, circleType) {
