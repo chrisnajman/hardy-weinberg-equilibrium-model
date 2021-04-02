@@ -92,7 +92,7 @@
             the example. In reality, eye-colour is determined by multiple
             alleles.
           </p>
-          <table>
+          <table class="punnett-square">
             <thead>
               <tr>
                 <th colspan="2" rowspan="2"></th>
@@ -248,7 +248,7 @@
             The corresponding genotype frequency,
             <span class="recessive">q<sup>2</sup></span> is:
             <span class="step"
-              >1) <span class="recessive">q<sup>2</sup></span> &equals; 20
+              >1. <span class="recessive">q<sup>2</sup></span> &equals; 20
               &divide; 100 &equals; 0.20</span
             >
           </p>
@@ -256,7 +256,7 @@
             From this we can calculate the
             <span class="recessive">q</span> allele frequency:
             <span class="step"
-              >2) <span class="recessive">q</span> &equals; &Sqrt;<span
+              >2. <span class="recessive">q</span> &equals; &Sqrt;<span
                 class="recessive"
                 >q<sup>2</sup></span
               >
@@ -268,7 +268,7 @@
             <span class="recessive">q</span> &equals; 1, we can derive the value
             of <span class="dominant">P</span>:
             <span class="step">
-              3) <span class="dominant">P</span> &plus; 0.45 &equals; 1 => 1.00
+              3. <span class="dominant">P</span> &plus; 0.45 &equals; 1 => 1.00
               &minus; 0.45 &equals; <span class="dominant">P</span> =>
               <span class="dominant">P</span> &equals; 0.55</span
             >
@@ -277,7 +277,7 @@
             By squaring <span class="dominant">P</span> we get the frequency of
             the <span class="dominant">BB</span> genotype:
             <span class="step"
-              >4) <span class="dominant">P<sup>2</sup></span> &equals; 0.55
+              >4. <span class="dominant">P<sup>2</sup></span> &equals; 0.55
               &times; 0.55 &equals; 0.30</span
             >
           </p>
@@ -289,7 +289,7 @@
             ><span class="dominant">B</span> genotype by using the
             Hardy-Weinberg equation:
             <span class="step"
-              >5) 2<span class="dominant">P</span
+              >5. 2<span class="dominant">P</span
               ><span class="recessive">q</span> &equals; 1 &minus;
               <span class="dominant">P<sup>2</sup></span> &minus;
               <span class="recessive">q<sup>2</sup></span> &equals; 1.00 &minus;
@@ -343,11 +343,9 @@
           </p>
 
           <form data-hw-calculator class="hw-form">
-            <p class="form-info">
-              Enter a number between 1 and 100 (&percnt;).
-            </p>
+            <p class="form-info">Enter a number between 1 and 100</p>
             <label for="numberInput" class="hw-label">
-              <span class="recessive">bb</span> &equals;
+              &percnt;
               <input
                 type="number"
                 id="numberInput"
@@ -373,53 +371,67 @@
           <template data-template>
             <div data-output-container class="output-container hide">
               <h2 class="qq-value">
-                <span class="recessive">bb</span> &equals;
-                <span data-initial-qq-input></span> &percnt;
+                For <span data-initial-qq-input></span>&percnt; of a population
+                carrying the homozygous recessive (<span class="recessive"
+                  >bb</span
+                >) genotype:
               </h2>
               <div class="boxes">
-                <div class="box box-genotype">
-                  <h3>Genotype</h3>
-                  <ul class="box-list genotype-list">
-                    <li>
-                      <span class="dominant">BB</span> frequency:
-                      <span data-pp-frequency></span>
-                    </li>
-                    <li>
-                      <span class="dominant">B</span
-                      ><span class="recessive">b</span>/<span class="recessive"
-                        >b</span
-                      ><span class="dominant">B</span> frequency:
-                      <span data-pq-frequency></span>
-                    </li>
-                    <li>
-                      <span class="recessive">bb</span> frequency:
-                      <span data-qq-frequency></span>
-                    </li>
-                  </ul>
-                  <p class="frequency-total">
-                    Total &equals; <span data-approx class="approx"></span
-                    ><span data-genotype-frequencies-total></span>
-                  </p>
+                <div class="box">
+                  <h3>Genotype Frequency</h3>
+                  <table class="frequencies">
+                    <tr>
+                      <th><span class="dominant">BB</span></th>
+                      <td><span data-pp-frequency></span></td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <span class="dominant">B</span
+                        ><span class="recessive">b</span>/<span
+                          class="recessive"
+                          >b</span
+                        ><span class="dominant">B</span>
+                      </th>
+                      <td><span data-pq-frequency></span></td>
+                    </tr>
+                    <tr>
+                      <th><span class="recessive">bb</span></th>
+                      <td><span data-qq-frequency></span></td>
+                    </tr>
+                    <tr>
+                      <th>Total</th>
+                      <td>
+                        <span data-approx class="approx"></span
+                        ><span data-genotype-frequencies-total></span>
+                      </td>
+                    </tr>
+                  </table>
                   <div
                     class="frequency-circles"
                     data-frequency-genotype-circles
                   ></div>
                 </div>
-                <div class="box box-allele">
-                  <h3>Allele</h3>
-                  <ul class="box-list allele-list">
-                    <li>
-                      <span class="dominant">B</span> frequency:
-                      <span data-p-frequency></span>
-                    </li>
-                    <li>
-                      <span class="recessive">b</span> frequency:
-                      <span data-q-frequency></span>
-                    </li>
-                  </ul>
-                  <p class="frequency-total">
-                    Total &equals; <span data-allele-frequencies-total></span>
-                  </p>
+                <div class="box">
+                  <h3>Allele Frequency</h3>
+
+                  <table class="frequencies allele-frequency">
+                    <tr>
+                      <th><span class="dominant">B</span></th>
+                      <td><span data-p-frequency></span></td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <span class="recessive">b</span>
+                      </th>
+                      <td><span data-q-frequency></span></td>
+                    </tr>
+                    <tr>
+                      <th>Total</th>
+                      <td>
+                        <span data-allele-frequencies-total></span>
+                      </td>
+                    </tr>
+                  </table>
                   <div
                     class="frequency-circles"
                     data-frequency-allele-circles
@@ -453,6 +465,22 @@
               population over time.
             </dd>
           </dl>
+          <dl>
+            <dt>Natural Selection</dt>
+            <dd>
+              The change in <span class="strong">allele frequencies</span> in a
+              population over time as a result of their fitness for
+              reproduction.
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>Genetic Drift</dt>
+            <dd>
+              The change in <span class="strong">allele frequencies</span> in a
+              population over time due to random events.
+            </dd>
+          </dl>
 
           <dl>
             <dt>Allele</dt>
@@ -472,17 +500,17 @@
             </dd>
             <dt>Genotype frequency</dt>
             <dd>The proportion of allele combinations in a cell.</dd>
-            <dt>Homozygous dominant chromosome</dt>
+            <dt>Homozygous dominant genotype</dt>
             <dd>
               Both the allele inherited from the mother and the one inherited
               from the father are dominant.
             </dd>
-            <dt>Homozygous recessive chromosome</dt>
+            <dt>Homozygous recessive genotype</dt>
             <dd>
               Both the allele inherited from the mother and the one inherited
               from the father are recessive.
             </dd>
-            <dt>Heterozygous chromosome</dt>
+            <dt>Heterozygous genotype</dt>
             <dd>One allele is dominant and one is recessive.</dd>
           </dl>
         </section>
