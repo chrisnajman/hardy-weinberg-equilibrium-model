@@ -1,4 +1,4 @@
-$fontSpecial: Arial, sans-serif;
+$fontSpecial: "Arial Thin", sans-serif;
 $dominantColour:#663030;
 $recessiveColour: #6495ed;
 $strongFontWeight: 600;
@@ -26,10 +26,11 @@ $circle: 1rem;
 
 //////////////////////////////////////////////////////////
 
-
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-    margin-top: 0;
+    margin-top:0;
     margin-bottom: 1rem;
 }
 html {
@@ -55,7 +56,7 @@ h4,
 h5,
 h6 {
     font-weight: $headerFontWeight;
-    font-family: "Arial Thin", sans-serif;
+    font-family: $fontSpecial;
 }
 
 h2 {
@@ -188,8 +189,34 @@ p, li, dd {
     background:white;
 }
 
-.page-title {
-    margin-bottom: 2rem;    
+.page {
+
+    &-title {
+        margin-bottom: 2rem;   
+        font-size: 1.85rem; 
+        line-height: 1.5;
+        text-align:center;
+        @media screen and (min-width: 960px) {
+            line-height: normal;
+            font-size: 2.6rem;
+            text-align: left;
+        }
+    }
+
+    &-footer {
+        border-top: 1px solid $borderColour;
+        padding-top: 2rem;
+        margin-top: 2rem;
+
+        a { border-bottom:none;}
+
+        &-nav {
+        
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
 }
 
 .step {
@@ -340,7 +367,7 @@ p, li, dd {
 
     table { margin: 2rem 0; }
 
-    .page-title { line-height: normal;}
+
 
     .container {
         padding: 3rem 5rem;
