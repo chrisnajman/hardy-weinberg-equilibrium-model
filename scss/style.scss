@@ -145,6 +145,19 @@ p, li, dd {
     max-width: 60ch;
 }
 
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
 .centre-element { 
     @include marginCentre; 
 }
@@ -195,27 +208,21 @@ p, li, dd {
         margin-bottom: 2rem;   
         font-size: 1.85rem; 
         line-height: 1.5;
-        text-align:center;
         @media screen and (min-width: 960px) {
             line-height: normal;
             font-size: 2.6rem;
             text-align: left;
         }
     }
+}
 
-    &-footer {
-        border-top: 1px solid $borderColour;
-        padding-top: 2rem;
-        margin-top: 2rem;
+.next-prev {
+    a { border-bottom:none;}
 
-        a { border-bottom:none;}
-
-        &-nav {
-        
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 }
 
